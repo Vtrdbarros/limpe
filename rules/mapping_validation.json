@@ -1,0 +1,38 @@
+{
+    "column_mapping": {
+        "NCM": ["NCM", "NCM Code", "Código NCM"],
+        "Descrição": ["Descrição", "Description", "Nome do Produto"],
+        "CEST": ["CEST", "Código CEST"],
+        "CST_ICMS": ["CST ICMS", "Situação Tributária"],
+        "CST_PIS_COFINS": ["CST PIS/COFINS", "Situação PIS/COFINS"],
+        "Codigo_Produto": ["Código Produto", "Código", "Código Interno", "Código Fornecedor"]
+    },
+    "validation_rules": {
+        "NCM": {
+            "type": "string",
+            "length": [7, 8],
+            "pad": "left",
+            "pad_char": "0"
+        },
+        "Descrição": {
+            "type": "string",
+            "patterns": ["\\d+kg", "\\d+g", "\\d+gr"]
+        },
+        "CEST": {
+            "type": "string",
+            "length": [7]
+        },
+        "CST_ICMS": {
+            "type": "string",
+            "allowed_values": ["00", "10", "20", "30", "40", "41", "50", "51", "60", "70", "90"]
+        },
+        "CST_PIS_COFINS": {
+            "type": "string",
+            "allowed_values": ["01", "02", "03", "04", "05", "06", "07", "08", "09", "49", "50", "51", "52", "53", "54", "55", "56", "60", "61", "62", "63", "64", "65", "66", "67", "70", "71", "72", "73", "74", "75", "98", "99"]
+        },
+        "Codigo_Produto": {
+            "type": "string",
+            "patterns": ["\\d+"]
+        }
+    }
+}
